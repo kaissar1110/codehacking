@@ -58,8 +58,8 @@
     @endif
 </div>
 <div class="form-group">
-	{!! Form::label('file', 'Images:') !!}
-	{!! Form::file('file', ['class'=>'form-control']) !!}
+	{!! Form::label('photo_id', 'Photos:') !!}
+	{!! Form::file('photo_id', ['class'=>'form-control']) !!}
 	
 </div>
 
