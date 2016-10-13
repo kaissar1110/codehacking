@@ -12,15 +12,16 @@
       <th>Email</th>
       <th>Roles</th>
       <th>Status</th>
-      <td>Created_at</td>
+      <th>Created_at</th>
+      <th>Photo</th>
     </tr>
   </thead>
   <tbody>
     
     @foreach ($users as $user)
 	<tr>
-	<td> {{$user->id}} </td>
-	<td> {{$user->name}} </td>
+	<td> {{$user->id}}</td>
+	<td><a href=" {{ $user->role_id != 1 ? route('admin.users.edit', $user->id) : route('admin.users.index') }} ">{{$user->name}}</a> </td>
 	<td> {{$user->email}} </td>
 	<td> {{$user->role->name}} </td>
 	<td>
@@ -30,6 +31,7 @@
 
 	</td>
 	<td> {{$user->created_at->DiffForHumans()}} </td>
+	<td><img src="{{url('/images/'. ($user->photo ? $user->photo->file : 'no_image.png'))}}" width="100" height="80" class="img-circle"></td> 
     </tr>	
     @endforeach
   

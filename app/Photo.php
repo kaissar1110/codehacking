@@ -6,8 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Photo extends Model
 {
-    protected $fillable = [
+    protected $fillable = ['file'];
+    protected $upload = '/images/';
 
-    	'file',
-    ];
+    public function images($value){
+
+    	
+
+    	return $this->upload.$photo;
+
+    }
+
+
 }

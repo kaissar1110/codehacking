@@ -4,7 +4,7 @@
 
 <h1>Create Users</h1>
 
-
+	
 
 
 {!! Form::open(['method' => 'POST', 'action' => 'AdminUsersController@store', 'files' =>true]) !!} 
