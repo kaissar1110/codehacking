@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\User;
 use App\Role;
 use App\Photo;
+use Illuminate\Support\Facades\Auth;;
 class AdminUsersController extends Controller
 {
     /**
@@ -136,6 +137,15 @@ class AdminUsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrfail($id);
+
+        unlink(public_path()."/images/".$user->photo->file);
+        $user->delete();
+
+        return redirect('admin/users/');
+
+       
+
+       
     }
 }
